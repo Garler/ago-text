@@ -1,6 +1,6 @@
 package ru.netology
 
-val timeSeconds = 75600
+val timeSeconds = 1320
 val minutes = timeSeconds / 60
 val hours = minutes / 60
 
@@ -20,7 +20,7 @@ fun agoToText(timeSeconds: Int) = when {
 
 fun timeMinutes(minutes: Int) = when {
     minutes % 10 == 1 && minutes % 100 != 11 -> "у"
-    minutes in 2..4 -> "ы"
+    minutes % 10 in 2..4 && minutes % 100 !in 12..14 -> "ы"
     else -> ""
 }
 
